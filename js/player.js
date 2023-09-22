@@ -11,80 +11,18 @@ class Playlist {
         this.videos = videos
         this.iframe = iframe
         this.player = player
-        // this.player.on('ended', () => {
-        //     this.lastVideo()
-        //     // this.counter += 1
-
-
-        //     this.play()
-        //         this.videos.play()
-        //         // this.changeVideo();
-        //         return
-            
-        //     // transition.dataset.active='true'
-        // })     
-    }
-
-    play() {
-
-        this.player.on('ended', () => {
-            console.log('acabou')
-            if(this.counter <= this.videos.length){
-                this.counter += 1
-            }else{
+        this.player.on('ended', async ()=>{
+            if (this.counter >= this.videos.length){
                 this.counter = 0
+            }else{
+                this.counter += 1
             }
-            this.playVideo()
-        } )
-        this.playVideo()
-        
-        // this.checkUpdatePlaylist()
-        // console.log(this.counter)
-        
-        // this.player.loadVideo(`${this.videos[this.counter].embedLink}&autoplay=true&muted=true&controls=false&responsive=true`);
-      
-        // this.iframe.src = `${this.videos[this.counter].embedLink}&autoplay=true&muted=true&controls=false&responsive=true`
-        // console.log(this.iframe.src)
-        // this.player.on('loaded', () => {
-            
-        //     this.player.play();
-        //     // transition.dataset.active='false'
-        // })
-        
-    }
-
-    playVideo(){
-        this.player.loadVideo(`${this.videos[this.counter].embedLink}&autoplay=true&muted=true&controls=false&responsive=true`)
-        console.log(this.iframe.src)
-        this.player.on('loaded', () => {
-            this.player.play()
-            console.log('logou')
+            await this.player.loadVideo(this.videos[this.counter].embedLink)
+            this.player.on('loaded', () => this.player.play())
         })
-        this.iframe.src = `${this.videos[this.counter].embedLink}&autoplay=true&muted=true&controls=false&responsive=true`
-        this.player.on('ended', ()=> {
-            this.play()
-        })
-    }
-
-//------- start all the class methods and start the video ↑
-
-    // changeVideo() {
     
-    //     this.counter += 1
-    //     this.player.loadVideo(`${this.videos[this.counter].embedLink}&autoplay=true&muted=true&controls=false&responsive=true`);
-    //     this.player.on('loaded', () => {
-    //         this.player.play();
-    //         // transition.dataset.active='false'
-    //     });
-    // }
-
-//------- go back to the beginning if the video is the last ↑
-
-    lastVideo() {
-        if( this.counter === this.videos.length){
-            this.counter = 0
-        }
     }
+
 
 //------- go back to the beginning if the video is the last ↑
 
@@ -125,5 +63,6 @@ playerSetup()
         const videos = await getVideos()
         const player = new Vimeo.Player('video') 
         const playlist = new Playlist(player, videos, iframe)
+        playlist.checkUpdatePlaylist()
         playlist.play()
     })
