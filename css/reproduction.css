@@ -167,7 +167,7 @@ body{
 }
 
 #reproduction .container .all .content .line{
-	width: 80%;
+	width: 50%;
 	height: 4px;
 	background-color: var(--white);
 	border-radius: 30px;
