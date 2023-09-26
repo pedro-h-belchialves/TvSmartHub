@@ -50,6 +50,7 @@ body{
 	display: grid;
 	place-items: center end;
 	position: relative;
+	overflow: hidden;
 }
 
 #reproduction #transition{
@@ -75,6 +76,10 @@ body{
 	justify-content: center;
 	gap: .5rem 6rem;
 	z-index: 2;
+	backdrop-filter: blur(45px);
+    background:#ffffff15;
+	height: 100vh;
+	width:15%;
 }
 
 #reproduction .videoContainer{
@@ -94,13 +99,6 @@ body{
 	right: 0;
 	min-width: 100% !important;
 	min-height: 100% !important;
-}
-
-#reproduction .container{
-	backdrop-filter: blur(20px);
-    background:#00000025;
-	height: 100vh;
-	width:12%;
 }
 
 #reproduction .container .all{
@@ -182,8 +180,24 @@ body{
 	gap: 1.5pc;
 }
 
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 7pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 4pc;
+}
+
 #reproduction .container .all .content .time img{
-	width: 7pc;
+	width: 10pc;
 	height: fit-content;
 }
 
@@ -232,10 +246,6 @@ body{
 		gap: 5pc;
 }
 
-#reproduction .container .all .content .hours{
-		gap: 1.3pc;
-}
-
 #reproduction .container .all .content .hours h5{
 		font-size: 3pc;
 }
@@ -254,11 +264,6 @@ body{
 
 #reproduction .container .all .content .line{
 		width: 60%;
-		height: 4px;
-}
-
-#reproduction .container .all .content  .time{
-		gap: 1.5pc;
 }
 
 #reproduction .container .all .content  .time img{
@@ -269,12 +274,28 @@ body{
 		font-size: 2.2pc;
 }
 
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 5pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 3pc;
+}
+
 }
 
 @media (min-width:1366px) and (max-width:1920px){
 
 #reproduction .container .all{
-		height: 80%;
+		height: 75%;
 		gap: 8pc;
 }
 
@@ -309,12 +330,25 @@ body{
 
 #reproduction .container .all .content .line{
 		width: 60%;
-		height: 4px;
 }
 
-#reproduction .container .all .content  .time{
-		gap: 1.5pc;
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
 }
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 3pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 2pc;
+}
+
 
 #reproduction .container .all .content  .time img{
 		width: 4pc;
@@ -346,7 +380,7 @@ body{
 }
 
 #reproduction .container .all .content{
-		height:100%;
+		height:80%;
 		gap: 2pc;
 }
 
@@ -355,20 +389,20 @@ body{
 }
 
 #reproduction .container .all .content .hours h5{
-		font-size: 1.5pc;
+		font-size: 1.4pc;
 }
 
 #reproduction .container .all .content .hours h1{
-		font-size: 3.5pc;
+		font-size: 3pc;
 }
 
 #reproduction .container .all .content .hours span{
-		font-size: 1.5pc;
+		font-size: 1.3pc;
 		gap: .4rem;
 }
 
 #reproduction .container .all .content .hours span h4{
-		font-size: 1.5pc;
+		font-size: 1.3pc;
 }
 
 #reproduction .container .all .content .line{
@@ -376,25 +410,118 @@ body{
 		height: 3px;
 }
 
-#reproduction .container .all .content  .time{
-		gap: 1.5pc;
-}
-
 #reproduction .container .all .content  .time img{
 		width: 3pc;
 }
 
 #reproduction .container .all .content  .time h1{
-		font-size: 3.5pc;
+		font-size: 3pc;
+}
+
+#reproduction .container .all .content  .time span{
+		font-size: 1.3pc;
+}
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
 }
 
 #reproduction .container .all .content  .time h1 span{
-		font-size: 1.5pc;
+		font-size: 1.3pc;
 }
 
 #reproduction .container .all .content  .time .local h5{
-		font-size: 1.1pc;
+		font-size: 1pc;
 }
 
 }
 
+@media(min-width:7680px){
+
+#reproduction .container{
+	gap: .5rem 6rem;
+	backdrop-filter: blur(55px);
+	width:15%;
+}
+
+#reproduction .container .all{
+	height: 90%;
+	gap: 18pc;
+}
+
+#reproduction .container .all #logo{
+	width: 80%;
+	height: fit-content;
+}
+
+#reproduction .container .all .content{
+	width: 100%;
+	height:65%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10pc;
+}
+
+#reproduction .container .all .content .hours{
+	gap: 4pc;
+}
+
+#reproduction .container .all .content .hours h5{
+	font-size:7pc;
+	font-weight: 400;
+}
+
+#reproduction .container .all .content .hours h1{
+	font-size: 19pc;
+}
+
+#reproduction .container .all .content .hours span{
+	gap: 2rem;
+	font-size: 8pc;
+}
+
+#reproduction .container .all .content .hours span h4{
+	font-size: 8pc;
+}
+
+#reproduction .container .all .content .line{
+	width: 60%;
+	height: 7px;
+}
+
+#reproduction .container .all .content  .time{
+	gap: 4.5pc;
+}
+
+#reproduction .container .all .content  .time .temperature{
+	gap: 1rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 18pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 9pc;
+}
+
+#reproduction .container .all .content .time img{
+	width: 22pc;
+	height: fit-content;
+}
+
+#reproduction .container .all .content .time .local{
+	width: 80%;
+}
+
+#reproduction .container .all .content .time .local h5{
+	font-size:6pc;
+}
+
+}

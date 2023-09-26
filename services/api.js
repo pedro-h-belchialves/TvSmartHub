@@ -1,5 +1,5 @@
 const api = axios.create({
-    baseURL: 'https://tvgpr.com.br/api',
+    baseURL: 'https://api.tvgpr.com.br',
     timeout: 10000,
   });
 

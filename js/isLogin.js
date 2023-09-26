@@ -7,7 +7,6 @@ const checkDeviceId = async () => {
    } catch{
         window.location = '../login/login.html'
         localStorage.clear('deviceId')
-        console.log('Era pra limpar')
     }
 }
 

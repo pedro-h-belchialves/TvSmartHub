@@ -16,7 +16,9 @@ const getLogo = async () => {
 const local = async () => {
     const user = await getUser()
     const cidade = user.city
+    cidade[0].toUpperCase()
     const estado = user.state
+    estado.toUpperCase()
     city.innerHTML = cidade + ', ' + estado
 }
 

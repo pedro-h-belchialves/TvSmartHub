@@ -26,7 +26,7 @@
 
               <div class="hours">
 
-                <h5 id="ampm">AM</h5>
+                <h5 id="ampm"></h5>
 
                 <h1 id="hour" >00</h1>
 
@@ -44,9 +44,11 @@
 
              <div class="time">
 
-                <img src="../images/sol.svg" alt="sol">
+                <img id="imgClima" src="" alt="sol">
 
-                <h1>18 <span>°C</span></h1>
+              <div class="temperature">
+                <h1 id="temp"></h1><span>°C</span>
+              </div>
 
                 <div class="local">
                     <h5 id="city"></h5>
@@ -62,8 +64,9 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="../services/api.js"></script>
    <script src="../js/isLogin.js"></script>
-   <script src="../js/player.js"></script>
    <script src="../js/sidebar.js"></script>
+   <script src="../js/getClimate.js"></script>
+   <script src="../js/player.js"></script>
 
  
 </body>
