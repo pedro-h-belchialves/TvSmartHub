@@ -9,26 +9,33 @@ class Playlist {
     constructor(player, videos) {
         this.videos = videos
         this.player = player
-        this.player.on('ended', async ()=>{
+        console.log(this.videos.length)
+        
+        this.player.on('ended', async () => {
             transition.dataset.active = 'true'
-            if (this.counter >= this.videos.length){
+
+            if (this.counter >= this.videos.length - 1){
                 this.counter = 0
+                this.player.loadVideo(this.videos[this.counter].embedLink)
             }else{
                 this.counter += 1
+                this.player.loadVideo(this.videos[this.counter].embedLink)
             }
- 
-            await this.player.loadVideo(this.videos[this.counter].embedLink)
-
-
-            this.player.on('loaded', () => {
-                transition.dataset.active = 'false'
-                this.player.play()
+           
             })
+            
+        this.player.on('play', async () => {
+                console.log(this.counter)
+                transition.dataset.active = 'false'
+                // this.player.play()
+
         })
-        console.log(this.counter)
+
+
     }
 
 //------- go back to the beginning if the video is the last ↑
+
 
     checkUpdatePlaylist() { 
         const fetchPlaylist = async () => {
@@ -40,7 +47,9 @@ class Playlist {
                 this.videos = fetchedPlaylist.videos
             }
         }
-        setInterval(fetchPlaylist,10000);
+        setInterval(fetchPlaylist,5000);
+
+       
     }
 
 //------- checking if there have been any changes to the playlist and updating it ↑
@@ -63,10 +72,10 @@ const playerSetup = () => {
 
 playerSetup()
     .then(async () => {
+        
         const videos = await getVideos()
         const player = new Vimeo.Player('video') 
         const playlist = new Playlist(player, videos)
         playlist.checkUpdatePlaylist()
-        // playlist.play()
 })
 

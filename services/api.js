@@ -35,5 +35,4 @@ const getVideos = async () => {
     return videos
 }
 
-getActiveDevice()
 
