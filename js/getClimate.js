@@ -75,5 +75,6 @@ const img = document.querySelector('#imgClima')
         }
     } 
 
+    users()
 
-users()
+setInterval(() => {users()}, 300000 )
