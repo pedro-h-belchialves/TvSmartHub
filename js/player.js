@@ -9,7 +9,6 @@ class Playlist {
     constructor(player, videos) {
         this.videos = videos
         this.player = player
-        console.log(this.videos.length)
         
         this.player.on('ended', async () => {
             transition.dataset.active = 'true'
@@ -25,17 +24,9 @@ class Playlist {
             })
             
         this.player.on('play', async () => {
-                console.log(this.counter)
                 transition.dataset.active = 'false'
-                // this.player.play()
-
         })
-
-
     }
-
-//------- go back to the beginning if the video is the last ↑
-
 
     checkUpdatePlaylist() { 
         const fetchPlaylist = async () => {
@@ -48,12 +39,7 @@ class Playlist {
             }
         }
         setInterval(fetchPlaylist,10000);
-
-       
     }
-
-//------- checking if there have been any changes to the playlist and updating it ↑
-
 }
 
 const playerSetup = () => {
@@ -67,8 +53,6 @@ const playerSetup = () => {
         resolve()
     })
 }
-
-//------- create the iframe and place its attributes ↑
 
 playerSetup()
     .then(async () => {

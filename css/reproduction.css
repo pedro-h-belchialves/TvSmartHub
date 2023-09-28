@@ -388,7 +388,7 @@ body{
 }
 
 #reproduction .container .all .content .hours{
-		gap: 1pc;
+		gap:5px;
 }
 
 #reproduction .container .all .content .hours h5{

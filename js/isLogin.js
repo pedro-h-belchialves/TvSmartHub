@@ -1,20 +1,17 @@
 
 async function checkDeviceId() {
-    const device_id = getActiveDevice() 
+    const device_id = await getActiveDevice() 
     
       if(navigator.onLine){
-        console.log('online')
-        try {
-            await api.get(`/users/device/${device_id}`)
-            
-        } catch(err){
-            console.log(err)
-            window.location = '../login/login.html'
+
+        const device = await api.get(`/users/device/${device_id}`)
+
+        if(!device) {
             localStorage.clear('deviceId')
+            window.location.replace('../login/login.html')
+          
         }
-    }else{
-        console.log('offline')
-        
+
     }
 }
 
