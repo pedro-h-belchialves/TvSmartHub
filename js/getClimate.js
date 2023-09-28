@@ -7,7 +7,7 @@ const img = document.querySelector('#imgClima')
         const coordinates = user.coordinates
 
         const {data} = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall?${coordinates.replace('latitude', 'lat').replace('longitude','lon',)}&exclude=minutely,alerts&units=metric&appid=146a21dfc0785f0624e56f862451cc32`) 
+        `https://api.openweathermap.org/data/2.5/onecall?${coordinates.replace('latitude', 'lat').replace('longitude','lon')}&exclude=minutely,alerts&units=metric&appid=146a21dfc0785f0624e56f862451cc32`) 
 
         const graus = parseInt(data.current.temp)
 

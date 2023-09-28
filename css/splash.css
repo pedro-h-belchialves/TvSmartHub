@@ -126,15 +126,3 @@ body{
 }
 	
 }
-
-@media(min-width:7680px){
-	#splash .container img{
-		width:34pc !important;
-	}
-	#splash .container h1{
-	font-size: 26pc;
-	}
-	#splash .container h5{
-		font-size: 8pc;
-	}
-}

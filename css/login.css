@@ -180,7 +180,6 @@ body{
     color: var(--grey);
     padding-left: 10pc;
     font-size: 2.3pc;
-    transition: all .3s ease;
 }
 
 #login .container .form .all .input input:focus {
@@ -256,6 +255,10 @@ body{
     font-size: 2pc;
 }
 
+#login .container .form .all .input input:focus {
+    border: 4px solid var(--blue);
+}
+
 #login .container .form .all button{
     width: 52pc;
     height: 8pc;
@@ -325,6 +328,10 @@ body{
     
 #login .container .form .all .input input ::placeholder{
         font-size: 1.5pc;
+}
+
+#login .container .form .all .input input:focus {
+    border: 3px solid var(--blue);
 }
     
 #login .container .form .all button{
@@ -396,98 +403,15 @@ body{
 #login .container .form .all .input input ::placeholder{
         font-size: 1pc;
 }
+
+#login .container .form .all .input input:focus {
+    border: 2px solid var(--blue);
+}
     
 #login .container .form .all button{
         width: 25pc;
         height: 4pc;
         font-size: 1pc;
 }
-
-}
-
-@media(min-width:7680px){
-
-#login #error{
-    width: 1250px !important;
-    height: 580px !important;
-    border-radius: 68px 0px 68px 68px !important;
-    border: 4px solid rgb(255, 158, 158);
-}
-
-#login #error h3{
-    color: rgb(255, 158, 158);
-    font-size: 118px;
-    font-weight: 400;
-}
-
-#login .container{
-	gap: 30pc;
-    width: 90%;
-}
-
-#login .container .welcome{
-    border-top-right-radius: 80px;
-    border: 4px solid #ffffff6c;
-}
-
-#login .container .welcome .text{
-    width: 60%;
-    gap: 2pc;
-}
-
-#login .container .welcome .text h1{
-    font-size: 18pc;
-    line-height: 1.2;
-}
-
-#login .container .welcome .text p{
-    font-size: 7.5pc;
-}
-
-#login .container .form{
-    gap: 3pc;
-}
-
-#login .container .form .all{
-    gap: 8pc;
-}
-
-#login .container .form .all img{
-    width: 36pc;
-}
-
-#login .container .form .all h5{
-    font-size: 7pc;
-    width: 70%;
-}
-
-#login .container .form .all .input img{
-    position: absolute;
-    width: fit-content;
-    height: 3.5pc;
-    top: 37%;
-    left: 7%;
-}
-
-#login .container .form .all .input input{
-    width: 125pc;
-    height: 16pc;
-    border-radius: 4pc;
-    padding-left: 19pc;
-    font-size: 6pc;
-}
-
-#login .container .form .all button{
-    width: 125pc;
-    height: 16pc;
-    border-radius: 30pc;
-    font-size: 6pc;
-}
-
-#login .container .form .all .form-input{
-    gap: 8pc;
-}
-
-
 
 }
