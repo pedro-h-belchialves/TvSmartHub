@@ -66,7 +66,7 @@ async function checkDeviceId() {
     const device_id = getActiveDevice()
   
     
-    //   if(navigator.onLine){
+      if(navigator.onLine){
 
         try {
           await api.get(`/users/device/${device_id}`)
@@ -77,7 +77,7 @@ async function checkDeviceId() {
             reproduction.dataset.active = 'false'
         }
 
-    // }
+    }
 }
 
 setInterval(checkDeviceId(), 10000)
