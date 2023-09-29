@@ -1,0 +1,941 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  resize: none;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover; 
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	background-image: url('../images/splash.png');
+}
+
+:root{
+    --white: #fff;
+    --grey: #a3a3a3;
+    --blue: #008dff;
+}
+
+h1,h5,h4,p,span{
+	color: var(--white);
+	line-height: 1;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+@keyframes animar {
+	0%{
+		transform: translateX(-500px);
+		opacity: 0;
+		
+	}
+	40%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+	60%{
+		opacity: 1;
+		transform: translateX(0px);
+		
+	}
+	100%{
+		transform: translateX(500px);
+		opacity: 0;
+	}
+}
+
+#splash{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+#splash[data-active='false']{
+	display: none;
+}
+
+#splash .container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem; 
+	transform: translateX(200px); 
+	opacity: 0; 
+	animation: animar 2s cubic-bezier(.76,.19,.28,.96); 
+}
+
+#splash .container img{
+	width: 18pc;
+	height:fit-content;
+}
+
+#splash .container h1{
+	color: #fff;
+	font-size: 15pc;
+	font-weight: 700;
+	line-height: 1;
+}
+
+#splash .container h5{
+	color: #fff;
+	font-size: 4pc;
+	font-weight: 500;
+}
+
+@media(max-width:2880px){
+#splash .container img{
+		width: 15pc;
+}
+	
+#splash .container h1{
+		font-size: 12pc;
+}
+	
+#splash .container h5{
+		font-size: 3pc;
+}
+}
+
+@media(max-width:1920px){
+	
+#splash .container img{
+		width: 9pc;
+}
+	
+#splash .container h1{
+		font-size: 8pc;
+}
+	
+#splash .container h5{
+		font-size: 2.2pc;
+}
+	
+}
+
+@media(max-width:1366px){
+	
+#splash .container img{
+		width: 6pc;
+}
+	
+#splash .container h1{
+		font-size: 5pc;
+}
+	
+#splash .container h5{
+		font-size: 1.4pc;
+}
+	
+}
+
+
+
+#reproduction{
+	display: none;
+}
+
+#reproduction[data-active='true']{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center end;
+	position: relative;
+	overflow: hidden;
+}
+
+
+#reproduction #transition{
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	background-color: #000;
+	z-index: 1;
+	position: absolute;
+	visibility: hidden;
+	transition: all 2s ease;
+}
+
+#reproduction #transition[data-active='true']{
+	visibility: visible;
+	transition: all 2s ease !important;
+}
+
+#reproduction .container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem 6rem;
+	z-index: 2;
+	backdrop-filter: blur(45px);
+    /* background:#ffffff15; */
+	height: 100vh;
+	width:15%;
+}
+
+#reproduction .videoContainer{
+	position: fixed;
+	overflow: hidden;
+	min-width: 100% ;
+	min-height: 100vh;
+	padding-top: 56.25%;
+	background-color: black;
+}
+
+#reproduction .videoContainer iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	min-width: 100% !important;
+	min-height: 100% !important;
+}
+
+#reproduction .container .all{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 85%;
+	width: 70%;
+	gap: 18pc;
+}
+
+#reproduction .container .all img{
+	width: 90%;
+	height:fit-content;
+	object-fit: fill;
+}
+
+#reproduction .container .all .content{
+	width: 100%;
+	height:65%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10pc;
+}
+
+#reproduction .container .all .content .hours{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.3pc;
+	position: relative;
+}
+
+#reproduction .container .all .content .hours h5{
+	font-size:3.5pc;
+	font-weight: 300;
+}
+
+#reproduction .container .all .content .hours h1{
+	font-size: 9pc;
+	font-weight: 400;
+}
+
+#reproduction .container .all .content .hours span{
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	justify-content: center;
+	gap: .5rem;
+	font-size: 2.3pc;
+}
+
+#reproduction .container .all .content .hours span h4{
+	font-size: 2.3pc;
+	font-weight: 400;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: .3rem;
+}
+
+#reproduction .container .all .content .line{
+	width: 60%;
+	height: 4px;
+	background-color: var(--white);
+	border-radius: 30px;
+	display: block;
+}
+
+#reproduction .container .all .content  .time{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5pc;
+}
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 7pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 4pc;
+}
+
+#reproduction .container .all .content .time img{
+	width: 10pc;
+	height: fit-content;
+}
+
+#reproduction .container .all .content .time h1{
+	font-size: 5pc;
+	font-weight: 400;
+	display: flex;
+	align-items: start;
+	justify-content: start;
+}
+
+#reproduction .container .all .content .time h1 span{
+	font-size: 3pc;
+	font-weight: 400;
+}
+
+#reproduction .container .all .content .time .local{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0 !important;
+	width: 100%;
+}
+
+#reproduction .container .all .content .time .local h5{
+	font-size:2.6pc;
+	font-weight: 400;
+	display: flex;
+	text-align: center;
+}
+
+@media (min-width:1920px) and (max-width:2880px){
+
+#reproduction .container .all{
+		height: 75%;
+		gap: 6pc;
+}
+
+#reproduction .container .all img{
+		width: 95%;
+}
+
+#reproduction .container .all .content{
+		height:100%;
+		gap: 7pc;
+}
+
+#reproduction .container .all .content .hours h5{
+		font-size: 3pc;
+}
+
+#reproduction .container .all .content .hours h1{
+		font-size: 7.4pc;
+}
+
+#reproduction .container .all .content .hours span{
+		font-size: 2pc;
+}
+
+#reproduction .container .all .content .hours span h4{
+		font-size: 2pc;
+}
+
+#reproduction .container .all .content .line{
+		width: 60%;
+}
+
+#reproduction .container .all .content  .time img{
+		width: 7.5pc;
+}
+
+#reproduction .container .all .content  .time .local h5{
+		font-size: 2.2pc;
+}
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .8rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 5.5pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 3pc;
+}
+
+}
+
+@media (min-width:1366px) and (max-width:1920px){
+
+#reproduction .container .all{
+		height: 75%;
+		gap: 8pc;
+}
+
+#reproduction .container .all img{
+		width: 90%;
+}
+
+#reproduction .container .all .content{
+		height:100%;
+		gap: 4pc;
+}
+
+#reproduction .container .all .content .hours{
+		gap: 1pc;
+}
+
+#reproduction .container .all .content .hours h5{
+		font-size: 1.7pc;
+}
+
+#reproduction .container .all .content .hours h1{
+		font-size: 4.3pc;
+}
+
+#reproduction .container .all .content .hours span{
+		font-size: 1.3pc;
+		gap: .2rem;
+}
+
+#reproduction .container .all .content .hours span h4{
+		font-size: 1.3pc;
+}
+
+#reproduction .container .all .content .line{
+		width: 60%;
+		height: 2px;
+}
+
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .5rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+	font-size: 3.5pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+	font-size: 2pc;
+}
+
+
+#reproduction .container .all .content  .time img{
+		width: 4pc;
+}
+
+#reproduction .container .all .content  .time h1{
+		font-size: 4pc;
+}
+
+#reproduction .container .all .content  .time h1 span{
+		font-size: 2pc;
+}
+
+#reproduction .container .all .content  .time .local h5{
+		font-size: 1.3pc;
+}
+
+}
+
+@media(max-width:1366px){
+
+#reproduction .container .all{
+		height: 80%;
+		gap: 6pc;
+}
+
+#reproduction .container .all img{
+		width: 85%;
+}
+
+#reproduction .container .all .content{
+		height:80%;
+		gap: 3pc;
+}
+
+#reproduction .container .all .content .hours{
+		gap:5px;
+}
+
+#reproduction .container .all .content .hours h5{
+		font-size: 1pc;
+}
+
+#reproduction .container .all .content .hours h1{
+		font-size: 3pc;
+}
+
+#reproduction .container .all .content .hours span{
+		font-size: .8pc;
+		gap: .2rem;
+}
+
+#reproduction .container .all .content .hours span h4{
+		font-size: .8pc;
+}
+
+#reproduction .container .all .content .line{
+		width: 50%;
+		height: 1px;
+}
+
+#reproduction .container .all .content  .time img{
+		width: 3pc;
+}
+
+#reproduction .container .all .content  .time h1{
+		font-size: 2pc;
+}
+
+#reproduction .container .all .content  .time span{
+		font-size: 1pc;
+}
+
+#reproduction .container .all .content  .time .temperature{
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	gap: .3rem;
+}
+
+#reproduction .container .all .content  .time .temperature h1{
+		font-size: 2.8pc;
+}
+
+#reproduction .container .all .content  .time .temperature span{
+		font-size: 1pc;
+}
+
+#reproduction .container .all .content  .time .local h5{
+		font-size: 1pc;
+}
+
+}
+
+
+#login{
+	display: none;
+}
+
+#login[data-active='true']{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center start;
+    position: relative;
+}
+
+#login #error{
+    width: 450px !important;
+    height: 180px !important;
+    position: absolute;
+    right: 7%;
+    top: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px 0px 16px 16px !important;
+    border: 1px solid rgb(255, 158, 158);
+    transform: scale(0);
+    transition: all .3s cubic-bezier(.42,.4,.09,1.01);
+    border-radius: 48px 0px 48px 48px !important;
+    background-color:#ffffff20;
+    transform-origin: top right;
+}
+
+#login #error[data-active='true']{
+    transform: scale(1);
+}
+
+#login #error h3{
+    color: rgb(255, 158, 158);
+    font-size: 48px;
+    font-weight: 400;
+}
+
+#login .container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	gap: 20pc;
+    width: 95%;
+}
+
+#login .container .welcome{
+    backdrop-filter: blur(80px);
+    background:linear-gradient(100deg, #ffffff77, #ffffff27);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-top-right-radius: 30px;
+    border: 1px solid #ffffff54;
+    height: 95vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login .container .welcome .text{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+}
+
+#login .container .welcome .text h1{
+    color: var(--white);
+    font-size: 8pc;
+    font-weight: 800;
+}
+
+#login .container .welcome .text p{
+    color: var(--white);
+    font-size: 3.7pc;
+    font-weight: 400;
+}
+
+#login .container .welcome .text p span{
+    color: var(--white);
+    font-weight: 600;
+}
+
+#login .container .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1pc;
+}
+
+#login .container .form .all{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5pc;
+}
+
+#login .container .form .all img{
+    width: 16pc;
+    height: fit-content;
+}
+
+#login .container .form .all h5{
+    font-size: 4pc;
+    font-weight: 500;
+    color: var(--white);
+    width: 70%;
+}
+
+#login .container .form .all .form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 3pc;
+}
+
+#login .container .form .all .input{
+    position: relative;
+}
+
+#login .container .form .all .input img{
+    position: absolute;
+    width: fit-content;
+    height: 1.6pc;
+    top: 37%;
+    left: 7%;
+}
+
+#login .container .form .all .input input{
+    width: 70pc;
+    height: 9pc;
+    border-radius: 1pc;
+    background-color: var(--white);
+    color: var(--grey);
+    padding-left: 10pc;
+    font-size: 2.3pc;
+}
+
+#login .container .form .all .input input:focus {
+    border: 4px solid var(--blue);
+}
+
+#login .container .form .all .input input ::placeholder{
+    color: var(--grey);
+    font-size: 2.3pc;
+}
+
+#login .container .form .all button{
+    width: 70pc;
+    height: 9pc;
+    border-radius: 30pc;
+    font-size: 2.3pc;
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+#login .container .form .all button:focus {
+    border: 2px solid var(--white);
+}
+
+@media(max-width:2880px){
+#login #error{
+    background-color:#ffffff20;
+    border-radius: 32px 0px 32px 32px ;
+}
+
+#login .container{
+	gap: 8pc;
+    width: 90%;
+}
+
+#login .container .welcome{
+    width: 100%;
+}
+
+#login .container .welcome .text h1{
+    font-size: 6pc;
+}
+
+#login .container .welcome .text p{
+    font-size: 2.4pc;
+}
+
+#login .container .form .all{
+    gap: 3pc;
+}
+
+#login .container .form .all img{
+    width: 12pc;
+}
+
+#login .container .form .all h5{
+    font-size: 3pc;
+    width: 80%;
+}
+
+#login .container .form .all .form-input{
+    gap: 2rem;
+}
+
+#login .container .form .all .input input{
+    width: 52pc;
+    height: 8pc;
+    padding-left: 9pc;
+    font-size: 2pc;
+}
+
+#login .container .form .all .input input ::placeholder{
+    font-size: 2pc;
+}
+
+#login .container .form .all .input input:focus {
+    border: 4px solid var(--blue);
+}
+
+#login .container .form .all button{
+    width: 52pc;
+    height: 8pc;
+    font-size: 2pc;
+}
+}
+
+@media(max-width:1920px){
+    
+#login #error{
+    width: 290px !important;
+    height: 100px !important;
+    right: 5%;
+    top: 5%;
+    border-radius: 24px 0px 24px 24px !important;
+}
+
+#login #error h3{
+    font-size: 1.5pc;
+}
+
+#login .container{
+        gap: 8pc;
+        width: 90%;
+}
+    
+#login .container .welcome{
+        width: 100%;
+}
+    
+#login .container .welcome .text h1{
+        font-size: 3.8pc;
+}
+    
+#login .container .welcome .text p{
+        font-size: 1.9pc;
+}
+    
+#login .container .form .all{
+        gap: 3pc;
+}
+    
+#login .container .form .all img{
+        width: 7pc;
+}
+    
+#login .container .form .all h5{
+        font-size: 2pc;
+        width: 80%;
+}
+
+#login .container .form .all .form-input{
+        gap: 2rem;
+}
+    
+#login .container .form .all .input img{
+        height: 1.3pc;
+        top: 34%;
+}
+    
+#login .container .form .all .input input{
+        width: 35pc;
+        height: 5pc;
+        padding-left: 6pc;
+        font-size: 1.5pc;
+}
+    
+#login .container .form .all .input input ::placeholder{
+        font-size: 1.5pc;
+}
+
+#login .container .form .all .input input:focus {
+    border: 3px solid var(--blue);
+}
+    
+#login .container .form .all button{
+        width: 35pc;
+        height: 5pc;
+        font-size: 1.5pc;
+}
+
+}
+
+@media(max-width:1366px){
+
+#login #error{
+        width: 180px !important;
+        height: 70px !important;
+        border-radius: 8px 0px 8px 8px;
+}
+
+#login #error h3{
+        font-size: 18px;
+}
+    
+#login .container{
+        gap: 6pc;
+        width: 90%;
+}
+    
+#login .container .welcome{
+        width: 80%;
+}
+    
+#login .container .welcome .text h1{
+        font-size: 3pc;
+}
+    
+#login .container .welcome .text p{
+        font-size: 1.3pc;
+}
+    
+#login .container .form .all{
+        gap: 2.4pc;
+}
+    
+#login .container .form .all img{
+        width: 5pc;
+}
+    
+#login .container .form .all h5{
+        font-size: 1.55pc;
+        width: 100%;
+}
+
+#login .container .form .all .form-input{
+        gap: 1pc;
+}
+    
+#login .container .form .all .input img{
+        height: .8pc;
+        top: 34%;
+}
+    
+#login .container .form .all .input input{
+        width: 25pc;
+        height: 4pc;
+        padding-left: 5pc;
+        font-size: 1pc;
+}
+
+#login .container .form .all .input input ::placeholder{
+        font-size: 1pc;
+}
+
+#login .container .form .all .input input:focus {
+    border: 2px solid var(--blue);
+}
+    
+#login .container .form .all button{
+        width: 25pc;
+        height: 4pc;
+        font-size: 1pc;
+}
+
+}

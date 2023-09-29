@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="./css/splash.css">
-    <title>Splash Screen</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title></title>
 </head>
 
 <body>
-   <section id='splash'>
+   <section data-active="true" id='splash'>
 
      <div class='container'>
 
@@ -21,9 +21,116 @@
      </div>
 
    </section>
-   
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="./services/api.js"></script>
-   <script src="./js/splash.js"></script>
+
+   <section data-active="false" id='login' >
+
+    <div id="error" data-active="false">
+
+        <h3>Token inválido</h3>
+
+    </div>
+
+  <div class='container'>
+
+    <div class="welcome">
+
+         <div class="text">
+             
+             <h1>Olá, seja bem-vindo à TVGPR!</h1>
+
+             <p>Onde a informação e o entretenimento se unem para <span>impulsionar seu sucesso.</span></p>
+
+         </div>
+
+     </div>
+
+     <div class="form">
+
+        <div class="all">
+
+                 <img id="img" src="../images/tvgpr.png" alt="">
+
+                 <h5>Digite seu número de token para começar.</h5>
+
+             <div class="form-input">
+
+                 <div class="input">
+
+                     <img src="../images/key.svg" alt="">
+
+                     <input id="inputFocus" type="text" placeholder="Digite aqui">
+
+                 </div>
+
+                     <button id="btn" type="submit">Autenticar agora</button>
+                     
+             </div>
+        </div>
+     </div>
+  </div>
+
+ 
+  
+</section>
+
+<section data-active="false" id='reproduction'>
+
+  <div id="transition" data-active='false'></div>
+
+  <div class="videoContainer" id="videoContainer">
+      
+  </div>
+
+   <div class='container'>
+
+     <div class="all">
+
+          <img id="logo" src="" alt="logo">
+
+         <div class="content">
+
+            <div class="hours">
+
+              <h5 id="ampm"></h5>
+
+              <h1 id="hour" >00</h1>
+
+              <h1 id="minutes">00</h1>
+
+              <span>
+                  <h4 id="day"></h4>
+                  de
+                  <h4 id="month"></h4>
+              </span>
+              
+            </div>
+
+           <div class="line"></div>
+
+           <div class="time">
+
+              <img id="imgClima" src="" alt="sol">
+
+            <div class="temperature">
+              <h1 id="temp"></h1><span>°C</span>
+            </div>
+
+              <div class="local">
+                  <h5 id="city"></h5>
+              </div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./services/api.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  
+
 </body>
 </html>

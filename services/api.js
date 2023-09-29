@@ -3,7 +3,7 @@ const api = axios.create({
     timeout: 10000,
   });
 
-const authenticateUser = async (token) => {
+const authenticateUser = async function(token) {
     const { data } = await api.post('/auth/token', {
         token
     })
@@ -11,28 +11,26 @@ const authenticateUser = async (token) => {
     return data.device
 }
 
-const getActiveDevice = () => {
+const getActiveDevice = function() {
     const device_id = localStorage.getItem('deviceId')
     return device_id
 }
 
-const getUser = async () => {
+const getUser = async function() {
     const deviceId = getActiveDevice()
     const { data } = await api.get(`/users/device/${deviceId}`)
 
     return data.user 
 }
 
-const getPlaylist = async () => {
+const getPlaylist = async function() {
     const deviceID = getActiveDevice()
    const { data } = await api.get(`/playlists/device/${deviceID}`)
     return data.playlist
 }
 
-const getVideos = async () => {
+const getVideos = async function() {
     const playlist = await getPlaylist()
     const videos = playlist.videos
     return videos
 }
-
-
