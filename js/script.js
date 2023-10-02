@@ -1,9 +1,22 @@
-//===============================================================================
-
-
 const splash = document.getElementById('splash')
 const login = document.getElementById('login')
 const reproduction = document.getElementById('reproduction')
+const btn = document.getElementById('btn')
+const input = document.getElementById('inputFocus')
+const err = document.getElementById('error') 
+const logo = document.getElementById('logo')
+const city = document.getElementById('city')
+const state = document.getElementById('state')
+const hour = document.getElementById('hour')
+const minutes = document.getElementById('minutes')
+const day = document.getElementById('day')
+const month = document.getElementById('month')
+const ampm = document.getElementById('ampm')
+const transition = document.getElementById('transition')
+const temp = document.getElementById('temp')
+const img = document.getElementById('imgClima')
+
+//===============================================================================
 
 function checkAuthenticated () {
 	const active_device = getActiveDevice()
@@ -21,14 +34,7 @@ function checkAuthenticated () {
 
 setTimeout(checkAuthenticated, 2000)
 
-
 //===============================================================================
-
-
-const btn = document.getElementById('btn')
-const input = document.getElementById('inputFocus')
-const err = document.getElementById('error') 
-
 
 btn.onclick = async function() {
     const token = input.value
@@ -58,15 +64,13 @@ btn.onclick = async function() {
 window.onload = function() { input.focus()}
 getActiveDevice()
 
-
 //===============================================================================
-
 
 async function checkDeviceId() {
     const device_id = getActiveDevice()
   
     
-      if(navigator.onLine){
+    if(navigator.onLine){
 
         try {
           await api.get(`/users/device/${device_id}`)
@@ -80,21 +84,14 @@ async function checkDeviceId() {
     }
 }
 
-setInterval(checkDeviceId(), 10000)
-
+setInterval(checkDeviceId(),2000)
 
 //===============================================================================
-
-
-const logo = document.getElementById('logo')
-const city = document.getElementById('city')
-const state = document.getElementById('state')
 
 const getLogo = async function() {
     const user = await getUser()
     const img = user.logo
     logo.src = img
-    console.log(logo)
 }
 
 const local = async function() {
@@ -109,15 +106,7 @@ const local = async function() {
 getLogo()
 local()
 
-
 //===============================================================================
-
-
-const hour = document.getElementById('hour')
-const minutes = document.getElementById('minutes')
-const day = document.getElementById('day')
-const month = document.getElementById('month')
-const ampm = document.getElementById('ampm')
 
 setInterval( function() {
 
@@ -278,20 +267,17 @@ switch (setMonth) {
 
 month.innerHTML = monthName
 
-
 //===============================================================================
 
-
-const temp = document.getElementById('temp')
-const img = document.getElementById('imgClima')
-    
-    const users = async function() {
+    const usersWeather = async function() {
         const user =  await getUser()
 
         const coordinates = user.coordinates
 
         const {data} = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall?${coordinates.replace('latitude', 'lat').replace('longitude','lon')}&exclude=minutely,alerts&units=metric&appid=146a21dfc0785f0624e56f862451cc32`) 
+        `https://api.openweathermap.org/data/2.5/onecall?${coordinates
+        .replace('latitude', 'lat')
+        .replace('longitude','lon')}&exclude=minutely,alerts&units=metric&appid=146a21dfc0785f0624e56f862451cc32`) 
 
         const graus = parseInt(data.current.temp)
 
@@ -359,15 +345,9 @@ const img = document.getElementById('imgClima')
         }
     } 
 
-    users()
-
-setInterval(users(), 300000 )
-
+    setInterval(usersWeather(), 300000)
 
 //===============================================================================
-
-
-const transition = document.getElementById('transition')
 
 class Playlist {
     counter = 0
